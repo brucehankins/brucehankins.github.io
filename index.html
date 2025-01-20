@@ -5,31 +5,57 @@
     <title>Bruce Hankins - Fleet Management Professional</title>
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #34495e;
-            --accent-color: #3498db;
-            --text-color: #2c3e50;
-            --light-gray: #ecf0f1;
+            --primary-color: #0f0f0f;
+            --secondary-color: #2d2d2d;
+            --accent-color: #00ff00;
+            --text-color: #ffffff;
+            --dark-gray: #1a1a1a;
+            --light-gray: #333333;
+            --neon-blue: #00ffff;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         body {
             color: var(--text-color);
             line-height: 1.6;
-            background-color: #f5f6fa;
+            background-color: var(--primary-color);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0,255,0,0.1) 0%, rgba(0,255,255,0.1) 100%);
+            pointer-events: none;
+            z-index: -1;
         }
 
         header {
-            background: var(--primary-color);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
+            background: var(--dark-gray);
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--neon-blue));
         }
 
         .container {
@@ -39,65 +65,122 @@
         }
 
         .profile-header h1 {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(90deg, var(--accent-color), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .profile-header h2 {
+            font-size: 1.5rem;
+            color: #888;
+            margin-bottom: 1.5rem;
         }
 
         .contact-info {
             display: flex;
-            justify-content: center;
             gap: 2rem;
-            margin-top: 1rem;
+            margin-top: 2rem;
+            font-family: monospace;
+            font-size: 1.1rem;
+            color: #888;
         }
 
         .about-me {
-            background: white;
+            background: var(--secondary-color);
             padding: 3rem 2rem;
-            margin: 2rem 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            margin: 3rem 0;
+            border-radius: 12px;
+            border: 1px solid var(--light-gray);
+            position: relative;
+        }
+
+        .about-me::before {
+            content: "<about>";
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: var(--primary-color);
+            padding: 0 10px;
+            color: var(--accent-color);
+            font-family: monospace;
+            font-size: 0.9rem;
         }
 
         .section-title {
             color: var(--accent-color);
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--accent-color);
+            opacity: 0.3;
         }
 
         .experience-item {
-            background: white;
+            background: var(--secondary-color);
             padding: 2rem;
             margin: 1.5rem 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            border: 1px solid var(--light-gray);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,255,0,0.1);
         }
 
         .experience-title {
-            color: var(--primary-color);
-            font-size: 1.3rem;
+            color: var(--neon-blue);
+            font-size: 1.5rem;
             margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         .experience-date {
             color: var(--accent-color);
+            font-family: monospace;
             font-size: 0.9rem;
             margin-bottom: 1rem;
+            opacity: 0.8;
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin: 2rem 0;
+            margin: 3rem 0;
         }
 
         .skill-category {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            background: var(--secondary-color);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--light-gray);
+            position: relative;
+        }
+
+        .skill-category::before {
+            content: ">";
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-color);
+            font-family: monospace;
+            font-size: 1.2rem;
         }
 
         .skill-list {
@@ -105,24 +188,53 @@
         }
 
         .skill-list li {
-            margin: 0.5rem 0;
+            margin: 1rem 0;
             padding-left: 1.5rem;
             position: relative;
+            color: #ccc;
         }
 
         .skill-list li::before {
-            content: "•";
+            content: "⚡";
             color: var(--accent-color);
             position: absolute;
             left: 0;
+            opacity: 0.8;
         }
 
         .education {
-            background: white;
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            background: var(--secondary-color);
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            border-radius: 12px;
+            border: 1px solid var(--light-gray);
+            position: relative;
+        }
+
+        .education h3 {
+            color: var(--neon-blue);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education p {
+            color: #888;
+            font-family: monospace;
+        }
+
+        @media (max-width: 768px) {
+            .profile-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -130,87 +242,88 @@
     <header>
         <div class="container profile-header">
             <h1>Bruce T. Hankins</h1>
-            <h2>Fleet Management & Automotive Professional</h2>
+            <h2>Fleet Management & Automotive Systems Expert</h2>
             <div class="contact-info">
-                <span>Charles Town, WV</span>
-                <span>703-408-3376</span>
-                <span>hankins.bruce@outlook.com</span>
+                <span>$ location: Charles Town, WV</span>
+                <span>$ phone: 703-408-3376</span>
+                <span>$ email: hankins.bruce@outlook.com</span>
             </div>
         </div>
     </header>
 
     <main class="container">
         <section class="about-me">
-            <h2 class="section-title">About Me</h2>
-            <p>A dynamic fleet management professional with over 15 years of experience spanning automotive services, concrete operations, and large-scale fleet oversight. I specialize in implementing cutting-edge fleet management systems, optimizing maintenance operations, and driving operational excellence across multi-state operations. My expertise includes managing complex ERP systems, developing standardized methodologies for asset management, and leading teams to achieve exceptional results in high-pressure environments. I'm passionate about innovation in fleet management and consistently deliver solutions that enhance efficiency and reduce costs while maintaining the highest standards of service and safety.</p>
+            <h2 class="section-title">System Overview</h2>
+            <p>A fleet systems architect and infrastructure specialist with 15+ years of experience interfacing between automotive hardware and enterprise software solutions. Specializing in large-scale fleet optimization, ERP implementation, and predictive maintenance systems. Known for deploying cutting-edge telemetry solutions and building robust maintenance frameworks that scale across multi-state operations. Focused on driving digital transformation in traditional fleet operations through innovative system integration and data-driven decision making.</p>
         </section>
 
         <section class="experience">
-            <h2 class="section-title">Professional Experience</h2>
+            <h2 class="section-title">Runtime History</h2>
             
             <div class="experience-item">
                 <h3 class="experience-title">Corporate Fleet Director</h3>
-                <div class="experience-date">November 2023 - September 2024</div>
-                <p>Oversaw all maintenance and repair operations across 11+ states and 7 subsidiaries, managing over 2.5k pieces of equipment and 20+ reports. Led strategic initiatives for cost control, standardization, and operational efficiency.</p>
+                <div class="experience-date">$ active: 2023-11 to 2024-09</div>
+                <p>Architected and deployed fleet management solutions across 11+ states and 7 business units. Managed a fleet of 2.5k+ assets and orchestrated a team of 20+ technical specialists. Implemented advanced analytics for cost optimization and resource utilization.</p>
             </div>
 
             <div class="experience-item">
                 <h3 class="experience-title">Regional Fleet Director</h3>
-                <div class="experience-date">June 2022 - November 2023</div>
-                <p>Managed fleet operations across three states, leading procurement initiatives and implementing new fleet management systems. Served as project lead for major ERP and fleet management software implementations.</p>
+                <div class="experience-date">$ active: 2022-06 to 2023-11</div>
+                <p>Led digital transformation initiatives across three states. Spearheaded ERP implementation and next-gen fleet management system deployment. Developed innovative solutions for asset lifecycle management and predictive maintenance.</p>
             </div>
 
             <div class="experience-item">
-                <h3 class="experience-title">Fleet Manager</h3>
-                <div class="experience-date">July 2021 - June 2022</div>
-                <p>Managed over 500 assets and dozen+ direct reports. Implemented comprehensive maintenance management systems and developed equipment lifecycle planning strategies.</p>
+                <h3 class="experience-title">Fleet Systems Manager</h3>
+                <div class="experience-date">$ active: 2021-07 to 2022-06</div>
+                <p>Managed complex system of 500+ assets and orchestrated maintenance operations through integrated management platforms. Pioneered implementation of IoT-based fleet monitoring solutions.</p>
             </div>
 
             <div class="experience-item">
-                <h3 class="experience-title">Fleet Maintenance Supervisor</h3>
-                <div class="experience-date">April 2016 - January 2022</div>
-                <p>Supervised maintenance operations for 160+ vehicles and equipment pieces. Led SAP S/4Hana implementation team and achieved 12% increase in fleet availability through process improvements.</p>
+                <h3 class="experience-title">Fleet Maintenance Systems Supervisor</h3>
+                <div class="experience-date">$ active: 2016-04 to 2022-01</div>
+                <p>Orchestrated SAP S/4Hana implementation and achieved 12% increase in fleet availability through advanced analytics and process automation. Managed maintenance operations for 160+ vehicles and equipment pieces.</p>
             </div>
 
             <div class="experience-item">
-                <h3 class="experience-title">Senior Automotive Technician</h3>
-                <div class="experience-date">2007 - 2016</div>
-                <p>Progressed through various automotive technician roles, specializing in Toyota vehicles and earning multiple certifications. Performed complex diagnostics, repairs, and maintenance on diverse vehicle types.</p>
+                <h3 class="experience-title">Senior Automotive Systems Specialist</h3>
+                <div class="experience-date">$ active: 2007 to 2016</div>
+                <p>Specialized in complex vehicle diagnostics and system integration. Earned multiple technical certifications and developed expertise in hybrid systems and advanced automotive networks.</p>
             </div>
         </section>
 
         <section class="skills-grid">
             <div class="skill-category">
-                <h3 class="section-title">Technical Skills</h3>
+                <h3 class="section-title">Hardware Stack</h3>
                 <ul class="skill-list">
-                    <li>Welding (Stick and MIG)</li>
-                    <li>Air Brake Systems</li>
-                    <li>State Inspection Certification</li>
-                    <li>HVAC Systems</li>
-                    <li>Industrial Plumbing</li>
-                    <li>Electrical Systems</li>
-                    <li>Hydraulic Systems</li>
+                    <li>Advanced Welding Systems</li>
+                    <li>Pneumatic Control Systems</li>
+                    <li>Vehicle Inspection Protocols</li>
+                    <li>HVAC Infrastructure</li>
+                    <li>Industrial Fluid Systems</li>
+                    <li>Power Distribution Networks</li>
+                    <li>Hydraulic Control Systems</li>
                 </ul>
             </div>
 
             <div class="skill-category">
-                <h3 class="section-title">Enterprise Software</h3>
+                <h3 class="section-title">Software Stack</h3>
                 <ul class="skill-list">
-                    <li>SAP S/4Hana</li>
-                    <li>NetSuite ERP</li>
-                    <li>Fleetio</li>
-                    <li>Geotab</li>
-                    <li>Microsoft Office Suite</li>
-                    <li>SharePoint</li>
-                    <li>JIRA</li>
+                    <li>SAP S/4Hana Architecture</li>
+                    <li>NetSuite ERP Integration</li>
+                    <li>Fleetio Management Systems</li>
+                    <li>Geotab Telemetry Platform</li>
+                    <li>Microsoft Enterprise Suite</li>
+                    <li>SharePoint Infrastructure</li>
+                    <li>JIRA Project Management</li>
                 </ul>
             </div>
         </section>
 
         <section class="education">
-            <h2 class="section-title">Education</h2>
-            <h3>Bachelor of Science in Business, Management and Leadership</h3>
-            <p>Capella University - In Progress</p>
+            <h2 class="section-title">System Training</h2>
+            <h3>BS Business Management & Leadership</h3>
+            <p>$ status: in_progress</p>
+            <p>$ location: Capella University</p>
         </section>
     </main>
 </body>
