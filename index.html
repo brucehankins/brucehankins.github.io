@@ -2,78 +2,216 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rachel's 40th Birthday Celebration</title>
+    <title>Bruce Hankins - Fleet Management Professional</title>
     <style>
-        body {
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --text-color: #2c3e50;
+            --light-gray: #ecf0f1;
+        }
+
+        * {
             margin: 0;
-            font-family: Arial, serif;
-            background-color: #505A4C; /* Dark green */
-            color: #ffffff;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f5f6fa;
+        }
+
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 4rem 2rem;
             text-align: center;
         }
+
         .container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
-            max-width: 600px;
+            padding: 0 2rem;
         }
-        .header img {
-            max-width: 100%;
-            height: auto;
+
+        .profile-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
-        h2, p {
-            font-size: 1.2rem;
-            font-weight: 300;
-        }
-        .details p {
-            font-size: 1.2rem;
-        }
-        form {
-            margin-top: 1.5rem;
+
+        .contact-info {
             display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
         }
-        input, button {
-            padding: 0.8rem;
-            font-size: 1rem;
-            border: none;
-            border-radius: 5px;
+
+        .about-me {
+            background: white;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
         }
-        input {
-            background-color: #fff;
-            color: #000;
+
+        .section-title {
+            color: var(--accent-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
         }
-        button {
-            background-color: #7b8a69;
-            color: #fff;
-            cursor: pointer;
+
+        .experience-item {
+            background: white;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
         }
-        button:hover {
-            background-color: #5f6d53;
+
+        .experience-title {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-date {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .education {
+            background: white;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <img src="https://raw.githubusercontent.com/brucehankins/Config-Files/refs/heads/main/Screenshot_20241214_094439.png" alt="Forty">
-            <h2>You're Invited to Celebrate Rachel!</h2>
+    <header>
+        <div class="container profile-header">
+            <h1>Bruce T. Hankins</h1>
+            <h2>Fleet Management & Automotive Professional</h2>
+            <div class="contact-info">
+                <span>Charles Town, WV</span>
+                <span>703-408-3376</span>
+                <span>hankins.bruce@outlook.com</span>
+            </div>
         </div>
-        <div class="details">
-            <p><strong>Saturday, January 4th, 2025 @ 1:00 PM</strong></p>
-            <p>Bear Chase Brewing</p>
-            <p>33665 Bear Chase Ln, Bluemont, VA 20135</p>
-        </div>
-        <div class="rsvp">
-            <h2>RSVP Here</h2>
-            <form action="https://formspree.io/f/xldekqwr" method="POST">
-                <input type="text" name="name" placeholder="Your Full Name" required>
-                <input type="email" name="email" placeholder="Your Email Address">
-                <input type="tel" name="phone" placeholder="Your Phone Number">
-                <button type="submit">Submit RSVP</button>
-            </form>
-        </div>
-    </div>
+    </header>
+
+    <main class="container">
+        <section class="about-me">
+            <h2 class="section-title">About Me</h2>
+            <p>A dynamic fleet management professional with over 15 years of experience spanning automotive services, concrete operations, and large-scale fleet oversight. I specialize in implementing cutting-edge fleet management systems, optimizing maintenance operations, and driving operational excellence across multi-state operations. My expertise includes managing complex ERP systems, developing standardized methodologies for asset management, and leading teams to achieve exceptional results in high-pressure environments. I'm passionate about innovation in fleet management and consistently deliver solutions that enhance efficiency and reduce costs while maintaining the highest standards of service and safety.</p>
+        </section>
+
+        <section class="experience">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3 class="experience-title">Corporate Fleet Director</h3>
+                <div class="experience-date">November 2023 - September 2024</div>
+                <p>Oversaw all maintenance and repair operations across 11+ states and 7 subsidiaries, managing over 2.5k pieces of equipment and 20+ reports. Led strategic initiatives for cost control, standardization, and operational efficiency.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3 class="experience-title">Regional Fleet Director</h3>
+                <div class="experience-date">June 2022 - November 2023</div>
+                <p>Managed fleet operations across three states, leading procurement initiatives and implementing new fleet management systems. Served as project lead for major ERP and fleet management software implementations.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3 class="experience-title">Fleet Manager</h3>
+                <div class="experience-date">July 2021 - June 2022</div>
+                <p>Managed over 500 assets and dozen+ direct reports. Implemented comprehensive maintenance management systems and developed equipment lifecycle planning strategies.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3 class="experience-title">Fleet Maintenance Supervisor</h3>
+                <div class="experience-date">April 2016 - January 2022</div>
+                <p>Supervised maintenance operations for 160+ vehicles and equipment pieces. Led SAP S/4Hana implementation team and achieved 12% increase in fleet availability through process improvements.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3 class="experience-title">Senior Automotive Technician</h3>
+                <div class="experience-date">2007 - 2016</div>
+                <p>Progressed through various automotive technician roles, specializing in Toyota vehicles and earning multiple certifications. Performed complex diagnostics, repairs, and maintenance on diverse vehicle types.</p>
+            </div>
+        </section>
+
+        <section class="skills-grid">
+            <div class="skill-category">
+                <h3 class="section-title">Technical Skills</h3>
+                <ul class="skill-list">
+                    <li>Welding (Stick and MIG)</li>
+                    <li>Air Brake Systems</li>
+                    <li>State Inspection Certification</li>
+                    <li>HVAC Systems</li>
+                    <li>Industrial Plumbing</li>
+                    <li>Electrical Systems</li>
+                    <li>Hydraulic Systems</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="section-title">Enterprise Software</h3>
+                <ul class="skill-list">
+                    <li>SAP S/4Hana</li>
+                    <li>NetSuite ERP</li>
+                    <li>Fleetio</li>
+                    <li>Geotab</li>
+                    <li>Microsoft Office Suite</li>
+                    <li>SharePoint</li>
+                    <li>JIRA</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="education">
+            <h2 class="section-title">Education</h2>
+            <h3>Bachelor of Science in Business, Management and Leadership</h3>
+            <p>Capella University - In Progress</p>
+        </section>
+    </main>
 </body>
 </html>
