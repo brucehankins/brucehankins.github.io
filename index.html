@@ -229,6 +229,19 @@
             font-family: monospace;
         }
 
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: var(--accent-color);
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
         @media (max-width: 768px) {
             .profile-header h1 {
                 font-size: 2.5rem;
@@ -251,9 +264,9 @@
             <h1>Bruce T. Hankins</h1>
             <h2>Fleet Management & Safety Systems Expert</h2>
             <div class="contact-info">
-                <span>> location: Charles Town, WV</span>
+                <span>> location:<a href="https://www.google.com/maps/place/Charles+Town,+WV+25414/@39.2773537,-77.879026,14z/data=!3m1!4b1!4m6!3m5!1s0x89b60114dc03a417:0x4a0120b711a2561d!8m2!3d39.2889903!4d-77.8597175!16zL20vMDEweDB5?entry=ttu&g_ep=EgoyMDI2MDIyNC4wIKXMDSoASAFQAw%3D%3D"> Charles Town, WV</a></span>
                 <span>> phone:<a href="17034083376"> 703-408-3376</a></span>
-                <span>> email:<a href=mailto:"hankins.bruce@outlook.com"> hankins.bruce@outlook.com</a></span>
+                <span>> email:<a href="mailto:hankins.bruce@outlook.com"> hankins.bruce@outlook.com</a></span>
             </div>
         </div>
     </header>
@@ -341,10 +354,4 @@
 
         <section class="education">
             <h2 class="section-title">System Training</h2>
-            <h3>BS Business Management & Leadership</h3>
-            <p>~ status: in_progress</p>
-            <p>~ location: Capella University</p>
-        </section>
-    </main>
-</body>
-</html>
+            <h3>BS Business Management & Lea
